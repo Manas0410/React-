@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Widgets {
+  @apply h-12 bg-gray-700 w-32 rounded-md my-2 flex justify-center gap-2 items-center cursor-grab text-white;
+}
