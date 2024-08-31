@@ -86,3 +86,23 @@ const Draggable = () => {
 };
 
 export default Draggable;
+
+// Arr[] = ( 9:00, 9:45, 9:55, 11:00, 15:00, 18:00 }
+// Dep[] = { 9:20, 12:00, 11:30, 11:50, 19:00, 20:00 }
+
+const ar = [900, 945, 955, 1100, 1500, 1800];
+const dep = [920, 1200, 1130, 1150, 1900, 2000];
+
+let pc = 1;
+
+let i = 1;
+let PlatFormDeps = [dep[0]];
+while (i < ar.length) {
+  if (ar[i] >= Math.min(...PlatFormDeps)) {
+    // pop the smallest
+  } else {
+    pc++;
+  }
+  PlatFormDeps.push(dep[i]);
+  i++;
+}
