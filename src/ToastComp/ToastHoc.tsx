@@ -1,5 +1,36 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useToast } from "./ToastContext";
+
+const Progressbar = ({ time }: { time: number }) => {
+  const [progressWidth, setProgressWidth] = useState(100);
+
+  useEffect(() => {
+    const intervalTime = 100;
+    const totalSteps = (time * 1000) / intervalTime;
+    let currentStep = 0;
+
+    const intervalId = setInterval(() => {
+      currentStep++;
+      const newWidth = 100 - (currentStep / totalSteps) * 100;
+      setProgressWidth(newWidth);
+
+      if (currentStep >= totalSteps) {
+        clearInterval(intervalId);
+      }
+    }, intervalTime);
+
+    return () => clearInterval(intervalId);
+  }, [time]);
+
+  return (
+    <div className="w-full bg-gray-200">
+      <div
+        className="h-2 bg-gray-900 transition-all"
+        style={{ width: `${progressWidth}%` }}
+      ></div>
+    </div>
+  );
+};
 
 const ToastProvider = ({ children }: { children: ReactNode }) => {
   const { ToastData, removeToast } = useToast();
@@ -20,6 +51,7 @@ const ToastProvider = ({ children }: { children: ReactNode }) => {
             >
               X
             </button>
+            <Progressbar time={item.delay} />
           </div>
         ))}
       </div>

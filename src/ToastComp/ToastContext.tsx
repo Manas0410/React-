@@ -13,10 +13,11 @@ import {
 type data = {
   message: string;
   id: string;
+  delay: number;
 };
 
 type ToastValues = {
-  addToast: (message: string) => void;
+  addToast: (message: string, time: number) => void;
   removeToast: (id: string) => void;
   ToastData: data[];
 };
@@ -26,12 +27,20 @@ const ToastContext = createContext<ToastValues | undefined>(undefined);
 export const ToastContextProvider = ({ children }: { children: ReactNode }) => {
   const [ToastData, setToastData] = useState<data[]>([]);
 
-  const addToast = useCallback((message: string) => {
+  const addToast = useCallback((message: string, time: number = 2) => {
+    const id = crypto.randomUUID();
     const newData = {
       message,
-      id: crypto.randomUUID(),
+      id,
+      delay: time,
     };
+
     setToastData((prev) => [newData, ...prev]);
+
+    let timer = setTimeout(() => {
+      setToastData((prev) => prev.filter((t) => t.id !== id));
+      clearTimeout(timer);
+    }, time * 1000);
   }, []);
 
   const removeToast = useCallback((id: string) => {
