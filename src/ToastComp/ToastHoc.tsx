@@ -37,12 +37,9 @@ const ToastProvider = ({ children }: { children: ReactNode }) => {
   return (
     <section>
       <div className="fixed bottom-6 right-2 flex flex-col gap-3 ">
-        {ToastData.map((item, i) => (
-          <div className="relative">
-            <div
-              key={i}
-              className="h-20 w-[400px] items-center rounded-sm bg-green-300 flex justify-center "
-            >
+        {ToastData.map((item) => (
+          <div className="relative" key={item.id}>
+            <div className="h-20 w-[400px] items-center rounded-sm bg-green-300 flex justify-center ">
               {`${item.message}`}
             </div>
             <button
