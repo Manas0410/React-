@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TriggerToast from "./ToastComp/TriggerToast";
 import Pagination from "./Pagination/Pagination";
 import InfiniteCarousel from "./InfiniteCarousel/InfiniteCarousel";
+import Parent from "./ReactMemo/Parent";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Route path="/toast" element={<TriggerToast />} />
         <Route path="/pagination" element={<Pagination />} />
         <Route path="/InfiniteCarousel" element={<InfiniteCarousel />} />
-        {/* Add more routes as needed */}
+        <Route path="/memo" element={<Parent />} />
       </Routes>
     </Router>
   );
