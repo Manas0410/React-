@@ -1,0 +1,21 @@
+.infinityCarouselContainer {
+  display: flex;
+  gap: 12px;
+  height: 100vh;
+  width: calc(400px * 10);
+  align-items: center;
+  animation: inf 10s linear infinite;
+}
+
+@keyframes inf {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.continer:hover .infinityCarouselContainer {
+  animation-play-state: paused;
+}
