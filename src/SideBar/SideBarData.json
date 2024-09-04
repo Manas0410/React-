@@ -1,0 +1,83 @@
+[
+    {
+        "Route":"Home",
+        "path": "/sidebar/home",
+        "hasChildren":false
+    },
+    {
+        "Route":"About",
+        "path": "/sidebar/about",
+        "hasChildren":false
+    },
+    {
+        "Route":"Services",
+        "path": "/sidebar/services",
+        "hasChildren":true,
+        "children":[
+            {
+                "Route":"Service 1",
+                "path": "/sidebar/services/service1",
+                "hasChildren":false
+            },
+            {
+                "Route":"Service 2",
+                "path": "/sidebar/services/service2",
+                "hasChildren":false
+            },
+            {
+                "Route":"Service 3",
+                "path": "/sidebar/services/service3",
+                "hasChildren":false
+            },
+            {
+                "Route":"Service 4",
+                "path": "/sidebar/services/service4",
+                "hasChildren":true,
+                "children":[
+                    {
+                        "Route":"Sub Service 1",
+                        "path": "/sidebar/services/service4/subservice1",
+                        "hasChildren":false
+                    },
+                    {
+                        "Route":"Sub Service 2",
+                        "path": "/sidebar/services/service4/subservice2",
+                        "hasChildren":false
+                    },
+                    {
+                        "Route":"Sub Service 3",
+                        "path": "/sidebar/services/service4/subservice3",
+                        "hasChildren":false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Route":"Contact",
+        "path": "/sidebar/contact",
+        "hasChildren":false
+    },
+    {
+        "Route":"Management",
+        "path": "/sidebar/management",
+        "hasChildren":true,
+        "children":[
+            {
+                "Route":"Team",
+                "path": "/sidebar/management/team",
+                "hasChildren":false
+            }, 
+            {
+                "Route":"Projects",
+                "path": "/sidebar/management/projects",
+                "hasChildren":false
+            },
+            {
+                "Route":"Clients",
+                "path": "/sidebar/management/clients",
+                "hasChildren":false
+            }
+        ]
+    }
+]

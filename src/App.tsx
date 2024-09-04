@@ -5,6 +5,7 @@ import TriggerToast from "./ToastComp/TriggerToast";
 import Pagination from "./Pagination/Pagination";
 import InfiniteCarousel from "./InfiniteCarousel/InfiniteCarousel";
 import Parent from "./ReactMemo/Parent";
+import SideBar from "./SideBar/SideBar";
 
 const App = () => {
   return (
@@ -16,6 +17,11 @@ const App = () => {
         <Route path="/pagination" element={<Pagination />} />
         <Route path="/InfiniteCarousel" element={<InfiniteCarousel />} />
         <Route path="/memo" element={<Parent />} />
+        <Route path="/sidebar" element={<SideBar />} />
+        <Route path="/sidebar/:l1" element={<SideBar />} />
+        <Route path="/sidebar/:l1/:l2" element={<SideBar />} />
+        <Route path="/sidebar/:l1/:l2/:l3" element={<SideBar />} />
+        <Route path="/sidebar/:l1/:l2/:l3/:l4" element={<SideBar />} />
       </Routes>
     </Router>
   );
