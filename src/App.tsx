@@ -6,6 +6,7 @@ import Pagination from "./Pagination/Pagination";
 import InfiniteCarousel from "./InfiniteCarousel/InfiniteCarousel";
 import Parent from "./ReactMemo/Parent";
 import SideBar from "./SideBar/SideBar";
+import OTP from "./OTP/OTP";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/sidebar/:l1/:l2" element={<SideBar />} />
         <Route path="/sidebar/:l1/:l2/:l3" element={<SideBar />} />
         <Route path="/sidebar/:l1/:l2/:l3/:l4" element={<SideBar />} />
+        <Route path="/otp" element={<OTP />} />
       </Routes>
     </Router>
   );
