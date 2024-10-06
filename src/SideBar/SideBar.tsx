@@ -67,3 +67,16 @@ const SideBar = () => {
 };
 
 export default SideBar;
+
+// 7;
+// 7;
+// 7.5;
+// 7.5;
+// new features only 2-3
+// psudo classes and selectors
+// place div center : not clear answer also not able to do it with position and does not know body properties
+// not sure about transform
+// useref usecase : only one
+// why we use useref : no ans
+// form handling : very basic
+// React task : completed
