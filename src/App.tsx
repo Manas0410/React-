@@ -7,6 +7,7 @@ import InfiniteCarousel from "./InfiniteCarousel/InfiniteCarousel";
 import Parent from "./ReactMemo/Parent";
 import SideBar from "./SideBar/SideBar";
 import OTP from "./OTP/OTP";
+import MemoryGame from "./MemoryGame/MemoryGame";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/sidebar/:l1/:l2/:l3" element={<SideBar />} />
         <Route path="/sidebar/:l1/:l2/:l3/:l4" element={<SideBar />} />
         <Route path="/otp" element={<OTP />} />
+        <Route path="/MemoryGame" element={<MemoryGame />} />
       </Routes>
     </Router>
   );
