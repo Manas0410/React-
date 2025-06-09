@@ -5,3 +5,52 @@
 .Widgets {
   @apply h-12 bg-gray-700 w-32 rounded-md my-2 flex justify-center gap-2 items-center cursor-grab text-white;
 }
+
+.glowing-border-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.glowing-border-btn::before {
+  content: "";
+  position: absolute;
+  inset: -5px; /* Extends outside the button slightly */
+  border-radius: 12px; /* Matches button's rounded edges */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 150, 0.8),
+    rgba(0, 255, 255, 0.8)
+  );
+  z-index: -1; /* Behind the button */
+  filter: blur(5px); /* Creates the glowing effect */
+  animation: glow-border 2s infinite;
+}
+
+@keyframes glow-border {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1); /* Slight pulsating effect */
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+.glowing-border-btn:hover {
+  color: #ff0096;
+}

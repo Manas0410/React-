@@ -8,6 +8,7 @@ import Parent from "./ReactMemo/Parent";
 import SideBar from "./SideBar/SideBar";
 import OTP from "./OTP/OTP";
 import MemoryGame from "./MemoryGame/MemoryGame";
+import Logo from "./Logo/logo";
 
 const App = () => {
   return (
@@ -26,10 +27,10 @@ const App = () => {
         <Route path="/sidebar/:l1/:l2/:l3/:l4" element={<SideBar />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/MemoryGame" element={<MemoryGame />} />
+        <Route path="/logo" element={<Logo />} />
       </Routes>
     </Router>
   );
 };
 
 export default App;
-1;

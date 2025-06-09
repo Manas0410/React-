@@ -7,7 +7,7 @@ type card = {
 
 const MemoryGame = () => {
   const [Cards, setCards] = useState<card[]>([]);
-  const [gridCount, setgridCount] = useState<number>(3);
+  const [gridCount, setgridCount] = useState<number>(4);
   const [Flipped, setFlipped] = useState<number[]>([]);
   const [Win, setWin] = useState<boolean>(false);
   const [Solved, setSolved] = useState<number[]>([]);
@@ -61,6 +61,7 @@ const MemoryGame = () => {
       }
     }
   };
+
   return (
     <section>
       <h1>memory game</h1>
