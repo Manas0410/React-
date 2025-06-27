@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="in">in</button>
+  </body>
+  <script>
+    let abortControler = null;
+    const fetchApi = () => {
+      if (abortControler) abortControler.abort();
+      console.log(abortControler);
+
+      abortControler = new AbortController();
+      const { signal } = abortControler;
+
+      fetch("https://fakestoreapi.com/products", { signal });
+    };
+
+    const btn = document.getElementById("in");
+    btn.addEventListener("click", () => {
+      fetchApi();
+    });
+  </script>
+</html>

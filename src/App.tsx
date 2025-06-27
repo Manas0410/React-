@@ -9,6 +9,7 @@ import SideBar from "./SideBar/SideBar";
 import OTP from "./OTP/OTP";
 import MemoryGame from "./MemoryGame/MemoryGame";
 import Logo from "./Logo/logo";
+import AbortControllerCancelAPI from "./AbortControllerCancelAPI/AbortControllerCancelAPI";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/otp" element={<OTP />} />
         <Route path="/MemoryGame" element={<MemoryGame />} />
         <Route path="/logo" element={<Logo />} />
+        <Route path="/abortcontroller" element={<AbortControllerCancelAPI />} />
       </Routes>
     </Router>
   );
