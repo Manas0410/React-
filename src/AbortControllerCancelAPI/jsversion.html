@@ -12,7 +12,6 @@
     let abortControler = null;
     const fetchApi = () => {
       if (abortControler) abortControler.abort();
-      console.log(abortControler);
 
       abortControler = new AbortController();
       const { signal } = abortControler;
