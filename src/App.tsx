@@ -10,6 +10,8 @@ import OTP from "./OTP/OTP";
 import MemoryGame from "./MemoryGame/MemoryGame";
 import Logo from "./Logo/logo";
 import AbortControllerCancelAPI from "./AbortControllerCancelAPI/AbortControllerCancelAPI";
+import TitleAndFuzzySearch from "./TitleAndFuzzySearch/TitleAndFuzzySearch";
+import ProgressBar from "./ProgressBar/ProgressBar";
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/MemoryGame" element={<MemoryGame />} />
         <Route path="/logo" element={<Logo />} />
         <Route path="/abortcontroller" element={<AbortControllerCancelAPI />} />
+        <Route path="/TitleAndFuzzySearch" element={<TitleAndFuzzySearch />} />
+        <Route path="/progressbar" element={<ProgressBar />} />
       </Routes>
     </Router>
   );
