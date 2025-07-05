@@ -13,6 +13,7 @@ import AbortControllerCancelAPI from "./AbortControllerCancelAPI/AbortController
 import TitleAndFuzzySearch from "./TitleAndFuzzySearch/TitleAndFuzzySearch";
 import ProgressBar from "./ProgressBar/ProgressBar";
 import UseMemo from "./Hooks/UseMemo";
+import UseCallBack from "./Hooks/UseCallBack";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/TitleAndFuzzySearch" element={<TitleAndFuzzySearch />} />
         <Route path="/progressbar" element={<ProgressBar />} />
         <Route path="/usememo" element={<UseMemo />} />
+        <Route path="/usecallback" element={<UseCallBack />} />
       </Routes>
     </Router>
   );
