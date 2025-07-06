@@ -14,30 +14,60 @@ import TitleAndFuzzySearch from "./TitleAndFuzzySearch/TitleAndFuzzySearch";
 import ProgressBar from "./ProgressBar/ProgressBar";
 import UseMemo from "./Hooks/UseMemo";
 import UseCallBack from "./Hooks/UseCallBack";
+import { UseRef } from "./Hooks/UseRef";
+import Navigator from "./Navigator";
+
+export const routeConfig = [
+  { path: "/search", name: "Draggable", element: <Draggable /> },
+  {
+    path: "/infinitescroll",
+    name: "InfiniteScroll",
+    element: <InfiniteScroll />,
+  },
+  { path: "/toast", name: "TriggerToast", element: <TriggerToast /> },
+  { path: "/pagination", name: "Pagination", element: <Pagination /> },
+  {
+    path: "/InfiniteCarousel",
+    name: "InfiniteCarousel",
+    element: <InfiniteCarousel />,
+  },
+  { path: "/memo", name: "Memo (Parent)", element: <Parent /> },
+  { path: "/sidebar", name: "Sidebar Root", element: <SideBar /> },
+  { path: "/sidebar/:l1", name: "Sidebar L1", element: <SideBar /> },
+  { path: "/sidebar/:l1/:l2", name: "Sidebar L2", element: <SideBar /> },
+  { path: "/sidebar/:l1/:l2/:l3", name: "Sidebar L3", element: <SideBar /> },
+  {
+    path: "/sidebar/:l1/:l2/:l3/:l4",
+    name: "Sidebar L4",
+    element: <SideBar />,
+  },
+  { path: "/otp", name: "OTP", element: <OTP /> },
+  { path: "/MemoryGame", name: "MemoryGame", element: <MemoryGame /> },
+  { path: "/logo", name: "Logo", element: <Logo /> },
+  {
+    path: "/abortcontroller",
+    name: "AbortController API",
+    element: <AbortControllerCancelAPI />,
+  },
+  {
+    path: "/TitleAndFuzzySearch",
+    name: "Title Search",
+    element: <TitleAndFuzzySearch />,
+  },
+  { path: "/progressbar", name: "Progress Bar", element: <ProgressBar /> },
+  { path: "/usememo", name: "useMemo", element: <UseMemo /> },
+  { path: "/usecallback", name: "useCallback", element: <UseCallBack /> },
+  { path: "/useref", name: "useRef", element: <UseRef /> },
+];
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/search" element={<Draggable />} />
-        <Route path="/infinitescroll" element={<InfiniteScroll />} />
-        <Route path="/toast" element={<TriggerToast />} />
-        <Route path="/pagination" element={<Pagination />} />
-        <Route path="/InfiniteCarousel" element={<InfiniteCarousel />} />
-        <Route path="/memo" element={<Parent />} />
-        <Route path="/sidebar" element={<SideBar />} />
-        <Route path="/sidebar/:l1" element={<SideBar />} />
-        <Route path="/sidebar/:l1/:l2" element={<SideBar />} />
-        <Route path="/sidebar/:l1/:l2/:l3" element={<SideBar />} />
-        <Route path="/sidebar/:l1/:l2/:l3/:l4" element={<SideBar />} />
-        <Route path="/otp" element={<OTP />} />
-        <Route path="/MemoryGame" element={<MemoryGame />} />
-        <Route path="/logo" element={<Logo />} />
-        <Route path="/abortcontroller" element={<AbortControllerCancelAPI />} />
-        <Route path="/TitleAndFuzzySearch" element={<TitleAndFuzzySearch />} />
-        <Route path="/progressbar" element={<ProgressBar />} />
-        <Route path="/usememo" element={<UseMemo />} />
-        <Route path="/usecallback" element={<UseCallBack />} />
+        <Route path="/" element={<Navigator />} />
+        {routeConfig.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
       </Routes>
     </Router>
   );

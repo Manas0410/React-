@@ -1,35 +1,45 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./progress.css";
 
-const ColorConfig = {
+// Milestone-based colors
+const ColorConfig: Record<number, string> = {
   0: "red",
-  1: "red",
-  2: "red",
-  3: "red",
-  4: "orange",
-  5: "orange",
-  6: "orange",
-  7: "orange",
-  8: "green",
-  9: "green",
-  10: "green",
+  3: "orange",
+  7: "green",
+};
+
+// Get the nearest milestone color
+const getNearestColor = (progress: number): string => {
+  const milestones = Object.keys(ColorConfig)
+    .map(Number)
+    .sort((a, b) => b - a); // sort descending
+
+  for (const milestone of milestones) {
+    if (progress >= milestone) {
+      return ColorConfig[milestone];
+    }
+  }
+  return "gray"; // fallback, should never happen if 0 is defined
 };
 
 const ProgressBar = () => {
-  const [progerss, setProgress] = useState<number>(0);
+  const [progress, setProgress] = useState<number>(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((p) => {
-        if (p == 10) {
-          clearInterval(timer);
-          return p;
+    intervalRef.current = setInterval(() => {
+      setProgress((prev) => {
+        if (prev === 10) {
+          if (intervalRef.current) clearInterval(intervalRef.current);
+          return prev;
         }
-        return p + 1;
+        return prev + 1;
       });
     }, 200);
 
-    return () => clearInterval(timer);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, []);
 
   return (
@@ -37,11 +47,11 @@ const ProgressBar = () => {
       <div
         className="filler"
         style={{
-          width: `${progerss * 10}%`,
-          backgroundColor: `${ColorConfig[progerss]}`,
+          width: `${progress * 10}%`,
+          backgroundColor: getNearestColor(progress),
         }}
       >
-        {`${progerss * 10} %`}
+        {`${progress * 10}%`}
       </div>
     </div>
   );
