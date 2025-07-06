@@ -16,6 +16,7 @@ import UseMemo from "./Hooks/UseMemo";
 import UseCallBack from "./Hooks/UseCallBack";
 import { UseRef } from "./Hooks/UseRef";
 import Navigator from "./Navigator";
+import UseLayoutEffect from "./Hooks/UseLayoutEffect";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -58,6 +59,11 @@ export const routeConfig = [
   { path: "/usememo", name: "useMemo", element: <UseMemo /> },
   { path: "/usecallback", name: "useCallback", element: <UseCallBack /> },
   { path: "/useref", name: "useRef", element: <UseRef /> },
+  {
+    path: "/uselayouteffect",
+    name: "useLayoutEffect",
+    element: <UseLayoutEffect />,
+  },
 ];
 
 const App = () => {
