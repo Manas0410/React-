@@ -17,6 +17,7 @@ import UseCallBack from "./Hooks/UseCallBack";
 import { UseRef } from "./Hooks/UseRef";
 import Navigator from "./Navigator";
 import UseLayoutEffect from "./Hooks/UseLayoutEffect";
+import TaskQueue from "./TaskQueue/TaskQueue";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -64,6 +65,7 @@ export const routeConfig = [
     name: "useLayoutEffect",
     element: <UseLayoutEffect />,
   },
+  { path: "/taskqu", name: "Task Queue", element: <TaskQueue /> },
 ];
 
 const App = () => {
