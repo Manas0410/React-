@@ -1,12 +1,19 @@
 import React, { useEffect, useRef } from "react";
+import { useTaskContext } from "../services/DataContext";
 
 type ProgressBarProps = {
   timeRemaining?: number; // in seconds
+  taskId?: string; // Optional, can be used for tracking or identification
 };
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ timeRemaining = 2 }) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({
+  timeRemaining = 2,
+  taskId,
+}) => {
   const [progress, setProgress] = React.useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const { setTaskCompleted } = useTaskContext();
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -22,6 +29,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ timeRemaining = 2 }) => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    if (progress === 10) {
+      setTaskCompleted(taskId || "");
+    }
+  }, [progress]);
 
   return (
     <div className="w-full h-4 rounded-lg bg-slate-400 relative">

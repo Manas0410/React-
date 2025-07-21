@@ -6,6 +6,7 @@ export const taskSchema = z.object({
 });
 
 export type TaskSchemaType = z.infer<typeof taskSchema>;
+export type Task = TaskSchemaType & { id: string };
 
 export const defaultTask: TaskSchemaType = {
   taskName: "",

@@ -19,7 +19,7 @@ const AddTaskForm = () => {
 
   const onSubmit = (data: TaskSchemaType) => {
     console.log(data);
-    addTask(data);
+    addTask({ ...data, id: crypto.randomUUID() }); // Generate a unique ID for the task
     reset(); // Reset the form after submission
   };
 
