@@ -1,6 +1,6 @@
 import Draggable from "./Draggable/Draggable";
 import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TriggerToast from "./ToastComp/TriggerToast";
 import Pagination from "./Pagination/Pagination";
 import InfiniteCarousel from "./InfiniteCarousel/InfiniteCarousel";
@@ -19,7 +19,8 @@ import Navigator from "./Navigator";
 import UseLayoutEffect from "./Hooks/UseLayoutEffect";
 import TaskQueue from "./TaskQueue/TaskQueue";
 import NavBar from "./CustomRouter/NavBar";
-import { Router } from "./CustomRouter/RouterMethods";
+import ReactProfiler from "./Profiler/Profiler";
+// import { Router } from "./CustomRouter/RouterMethods";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -68,22 +69,27 @@ export const routeConfig = [
     element: <UseLayoutEffect />,
   },
   { path: "/taskqu", name: "Task Queue", element: <TaskQueue /> },
+  {
+    path: "/reactprofiler",
+    name: "React Profiler",
+    element: <ReactProfiler />,
+  },
 ];
 
 const App = () => {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<Navigator />} />
-    //     {routeConfig.map((route) => (
-    //       <Route key={route.path} path={route.path} element={route.element} />
-    //     ))}
-    //   </Routes>
-    // </Router>
-    <>
-      <NavBar />
-      <Router />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigator />} />
+        {routeConfig.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </Router>
+    // <>
+    //   <NavBar />
+    //   <Router />
+    // </>
   );
 };
 
