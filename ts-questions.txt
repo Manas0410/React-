@@ -1,0 +1,50 @@
+1. What is TypeScript and how is it different from JavaScript?
+2. What are the benefits of using TypeScript?
+3. How do you compile TypeScript to JavaScript?
+4. What is tsconfig.json? What are some important compiler options?
+5. What are types in TypeScript? List some basic types.
+6. What is type inference?
+7. What is the difference between any, unknown, never, and void?
+8. How is interface different from type in TypeScript?
+9. How do you define optional and default parameters in functions?
+10. What are enums in TypeScript?
+11. How do you define a tuple in TypeScript?
+12. What are literal types? How are they useful?
+13. What are union and intersection types?
+14. What are generics in TypeScript? Give a use case.
+15. How do you extend an interface or a type?
+16. What are type guards? Explain with examples.
+17. What is type assertion? When should you use it?
+18. What is the difference between readonly and const?
+19. How do you handle null and undefined types safely?
+20. Explain structural typing (duck typing) in TypeScript.
+21. How do you define and use mapped types?
+22. What are conditional types?
+23. What are utility types? (e.g., Partial, Pick, Omit, Record, Required, ReturnType)
+24. How does keyof, typeof, and in work in TypeScript?
+25. What are template literal types?
+26. How do you write a function that accepts a deeply nested object and validates it using types?
+27. What are declaration files (.d.ts) and when do you need them?
+28. How do you handle third-party libraries without TypeScript types?
+29. What is satisfies keyword (TS 4.9+) and how is it different from type assertion?
+30. How do you enforce immutability in TypeScript?
+31. How do you type props and state in functional components?
+32. How do you type refs (useRef)?
+33. How do you type events (e.g., onChange, onClick)?
+34. How do you type useReducer and useContext in TS?
+35. How do you type HOC or generic component props?
+36. How do you use React.FC or avoid it?
+37. How do you type children in a component?
+38. You have a function that takes a config object with dynamic keys, how will you type it?
+39. How do you make sure your API response matches your type?
+40. What would you do if you get a runtime error despite no TS compile errors?
+41. How would you create a generic form input component with custom types?
+42. What’s your approach to refactoring a large JS codebase into TS?
+43. How do you handle deeply nested object typing and access?
+44. How do you keep your TypeScript types DRY and reusable?
+45. Have you worked with discriminated unions? Explain a use case.
+46. Can an interface extend a union type?
+47. How do you prevent excess property checks in object literals?
+48. What are index signatures? When should you use them?
+49. How do you define recursive types?
+50. What is the difference between compile-time and runtime types in TS?
