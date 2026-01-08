@@ -21,8 +21,9 @@ import TaskQueue from "./TaskQueue/TaskQueue";
 import NavBar from "./CustomRouter/NavBar";
 import ReactProfiler from "./Profiler/Profiler";
 // import { Router } from "./CustomRouter/RouterMethods";
-import { ExampleContextProvider } from "./intcontext/ContextEx.jsx";
-import ABCComponent from "./intcontext/ABCComponent";
+// import { ExampleContextProvider } from "./intcontext/ContextEx";
+// import ABCComponent from "./intcontext/ABCComponent";
+import Tictactoe from "./Tictactoe/Tictacto.js";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -76,25 +77,30 @@ export const routeConfig = [
     name: "React Profiler",
     element: <ReactProfiler />,
   },
+  // {
+  //   path: "/abc",
+  //   name: "React Profiler",
+  //   element: <ABCComponent />,
+  // },
   {
-    path: "/abc",
-    name: "React Profiler",
-    element: <ABCComponent />,
+    path: "/tictactoe",
+    name: "Tictactoe",
+    element: <Tictactoe />,
   },
 ];
 
 const App = () => {
   return (
-    <ExampleContextProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Navigator />} />
-          {routeConfig.map((route) => (
-            <Route key={route.path} path={route.path} element={route.element} />
-          ))}
-        </Routes>
-      </Router>
-    </ExampleContextProvider>
+    // <ExampleContextProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigator />} />
+        {routeConfig.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </Router>
+    // </ExampleContextProvider>
     // <>
     //   <NavBar />
     //   <Router />
