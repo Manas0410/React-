@@ -3,7 +3,7 @@ async function outer() {
     await inner(); // micro 1
     console.log("Outer End");
   } catch (e) {
-    console.log("Caught:", e); //2
+    console.log("Caught:", e.message);
   }
 }
 
@@ -13,4 +13,4 @@ async function inner() {
 }
 
 outer();
-console.log("After Call"); //1
+console.log("After Call");

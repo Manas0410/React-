@@ -6,6 +6,7 @@ setTimeout(async () => {
 }, 0);
 
 setTimeout(() => {
+  //macro 2
   console.log("6");
 }, 0);
 

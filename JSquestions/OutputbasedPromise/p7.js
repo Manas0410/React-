@@ -16,4 +16,4 @@ Promise.resolve().then(() => console.log("E")); // micro 2
 
 console.log("F");
 
-//C A F B E D
+// c a f b e d

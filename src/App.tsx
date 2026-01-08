@@ -21,6 +21,8 @@ import TaskQueue from "./TaskQueue/TaskQueue";
 import NavBar from "./CustomRouter/NavBar";
 import ReactProfiler from "./Profiler/Profiler";
 // import { Router } from "./CustomRouter/RouterMethods";
+import { ExampleContextProvider } from "./intcontext/ContextEx.jsx";
+import ABCComponent from "./intcontext/ABCComponent";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -74,18 +76,25 @@ export const routeConfig = [
     name: "React Profiler",
     element: <ReactProfiler />,
   },
+  {
+    path: "/abc",
+    name: "React Profiler",
+    element: <ABCComponent />,
+  },
 ];
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigator />} />
-        {routeConfig.map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
-      </Routes>
-    </Router>
+    <ExampleContextProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Navigator />} />
+          {routeConfig.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Router>
+    </ExampleContextProvider>
     // <>
     //   <NavBar />
     //   <Router />
