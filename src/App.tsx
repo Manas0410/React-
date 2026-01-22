@@ -24,6 +24,7 @@ import ReactProfiler from "./Profiler/Profiler";
 // import { ExampleContextProvider } from "./intcontext/ContextEx";
 // import ABCComponent from "./intcontext/ABCComponent";
 import Tictactoe from "./Tictactoe/Tictacto.js";
+import SnakeLadder from "./Snakeladder/Board.js";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -86,6 +87,11 @@ export const routeConfig = [
     path: "/tictactoe",
     name: "Tictactoe",
     element: <Tictactoe />,
+  },
+  {
+    path: "/snakeladder",
+    name: "Snake and Ladder",
+    element: <SnakeLadder />,
   },
 ];
 
