@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const RenderStructure = ({ data, onAdd }) => {
+const RenderStructure = ({ data, onAdd, onDel }) => {
   const [expanded, setExpanded] = useState({});
 
   const expandClick = (id) => {
@@ -8,7 +8,7 @@ const RenderStructure = ({ data, onAdd }) => {
   };
 
   return (
-    <section className="max-w-80">
+    <section className="max-w-96">
       {data.map((item) => (
         <div key={item.id} className="ml-8 my-2">
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -17,11 +17,12 @@ const RenderStructure = ({ data, onAdd }) => {
             </span>
 
             {item.isFolder && (
-              <div className="ml-auto">
-                <button onClick={() => onAdd(item.id, true)}>+ 📁</button>
-                <button onClick={() => onAdd(item.id, false)}>+ 📄</button>
+              <div className="ml-auto flex gap-4">
+                <button onClick={() => onAdd(item.id, true)}>{"+ 📁"}</button>
+                <button onClick={() => onAdd(item.id, false)}>{"+ 📄"}</button>
               </div>
             )}
+            <button onClick={() => onDel(item.id)}>{" del "}</button>
           </div>
 
           {item.isFolder && expanded[item.id] && (

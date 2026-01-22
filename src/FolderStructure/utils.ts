@@ -20,3 +20,12 @@ export function insertNode(tree, parentId, newNode) {
     return node;
   });
 }
+
+export function deleteNode(tree, nodeId) {
+  return tree
+    .filter((node) => node.id !== nodeId)
+    .map((node) => ({
+      ...node,
+      children: node.children ? deleteNode(node.children, nodeId) : [],
+    }));
+}
