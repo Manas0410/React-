@@ -27,6 +27,7 @@ import Tictactoe from "./Tictactoe/Tictacto.js";
 import SnakeLadder from "./Snakeladder/Board.js";
 import FolderStructure from "./FolderStructure/FolderStructure.js";
 import TicTacToeDynamicGrid from "./Tictactoe/TicTacDynamicGrid.js";
+import ShapesUnload from "./ShapesUnload/ShapesUnload.js";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -104,6 +105,11 @@ export const routeConfig = [
     path: "/dynamictictactoe",
     name: "Dynamic Tictactoe",
     element: <TicTacToeDynamicGrid />,
+  },
+  {
+    path: "/shapesUnload",
+    name: "Shapes Unload",
+    element: <ShapesUnload />,
   },
 ];
 
