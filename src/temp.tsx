@@ -5,9 +5,11 @@ const throttl1 = (cb, delay) => {
   let waitingArgs = null;
 
   const timeoutFunction = () => {
-    shouldWait = false; //
-    if (waitingArgs) {
+    if (!waitingArgs)
+      shouldWait = false; //
+    else {
       cb(...waitingArgs);
+      console.log("waiting");
       waitingArgs = null;
       setTimeout(timeoutFunction, delay);
     }
@@ -21,6 +23,7 @@ const throttl1 = (cb, delay) => {
 
     cb(...args);
     shouldWait = true;
+    console.log("main");
 
     setTimeout(() => {
       timeoutFunction();
@@ -44,7 +47,6 @@ const throttl2 = (fun, delay) => {
 function Temp() {
   const [state, setState] = useState();
   const handleChange = (e) => {
-    console.log("asdfghj");
     setState(e.target.value);
   };
 
