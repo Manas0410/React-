@@ -24,3 +24,21 @@ const throttle = (cb, delay) => {
     setTimeout(timeoutFunction, delay);
   };
 };
+
+//basic version
+const throttleBasic = (cb, delay) => {
+  let shouldStop = false;
+
+  return (...args) => {
+    if (shouldStop) {
+      return;
+    }
+
+    cb(...args);
+    shouldStop = true;
+
+    setTimeout(() => {
+      shouldStop = false;
+    }, delay);
+  };
+};

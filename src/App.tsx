@@ -28,6 +28,7 @@ import SnakeLadder from "./Snakeladder/Board.js";
 import FolderStructure from "./FolderStructure/FolderStructure.js";
 import TicTacToeDynamicGrid from "./Tictactoe/TicTacDynamicGrid.js";
 import ShapesUnload from "./ShapesUnload/ShapesUnload.js";
+import Temp from "./temp.tsx";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -110,6 +111,11 @@ export const routeConfig = [
     path: "/shapesUnload",
     name: "Shapes Unload",
     element: <ShapesUnload />,
+  },
+  {
+    path: "/temp",
+    name: "Temp",
+    element: <Temp />,
   },
 ];
 
