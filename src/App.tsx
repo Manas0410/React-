@@ -29,6 +29,10 @@ import FolderStructure from "./FolderStructure/FolderStructure.js";
 import TicTacToeDynamicGrid from "./Tictactoe/TicTacDynamicGrid.js";
 import ShapesUnload from "./ShapesUnload/ShapesUnload.js";
 import Temp from "./temp.tsx";
+import path from "path";
+import CurrencyHomePage from "./PracticeCode/CurrencyHomePage.tsx";
+import { CurrencyContextProvider } from "./PracticeCode/CurrencyContext.tsx";
+import CurrencyDropdown from "./PracticeCode/CurrencyDropdown.tsx";
 
 export const routeConfig = [
   { path: "/search", name: "Draggable", element: <Draggable /> },
@@ -117,18 +121,30 @@ export const routeConfig = [
     name: "Temp",
     element: <Temp />,
   },
+  {
+    path: "/practcode-currencyhome",
+    name: "Currency home",
+    element: <CurrencyHomePage />,
+  },
+  {
+    path: "/practcode-currencydropdown",
+    name: "Currency Dropdown",
+    element: <CurrencyDropdown />,
+  },
 ];
 
 const App = () => {
   return (
     // <ExampleContextProvider>
     <Router>
-      <Routes>
-        <Route path="/" element={<Navigator />} />
-        {routeConfig.map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
-      </Routes>
+      <CurrencyContextProvider>
+        <Routes>
+          <Route path="/" element={<Navigator />} />
+          {routeConfig.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </CurrencyContextProvider>
     </Router>
     // </ExampleContextProvider>
     // <>
